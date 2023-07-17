@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Terminal Linux</title>
+  <style>
+    body {
+      font-family: monospace;
+      margin: 0;
+      padding: 0;
+      background-image: url("background-image.jpg");
+      background-size: cover;
+      background-position: center;
+    }
+    
+    .terminal-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      overflow: hidden;
+    }
+    
+    .terminal {
+      width: 100vw;
+      height: 100vh;
+      background-color: rgba(0, 0, 0, 0.8);
+      color: limegreen;
+      border: 2px solid limegreen;
+      padding: 20px;
+      overflow-y: scroll;
+      position: relative;
+      text-align: left;
+      white-space: pre-line;
+    }
+    
+    .terminal h1 {
+      margin-top: 0;
+      font-size: 24px;
+    }
+    
+    .output {
+      font-size: 18px;
+      line-height: 34px;
+    }
+    
+    @media only screen and (max-width: 768px) {
+      .terminal h1 {
+        font-size: 32px;
+      }
+    
+      .output {
+        font-size: 24px;
+        line-height: 30px;
+      }
+    }
+    
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+    
+    ::-webkit-scrollbar-thumb {
+      background-color: limegreen;
+    }
+    
+    ::-webkit-scrollbar-track {
+      background-color: rgba(0, 0, 0, 0.3);
+    }
+  </style>
+</head>
+<body>
+  <div class="terminal-container">
+    <div class="terminal">
+      <h1>Bruno Anacleto</h1>
+      <p class="output"></p>
+    </div>
+  </div>
+
+  <script>
+    const terminalElement = document.querySelector(".terminal");
+    const outputElement = document.querySelector(".output");
+    const text = `Olá, Bruno Anacleto!
+      
+    É um prazer poder me apresentar como um técnico em computadores, programador web, designer web e hacker ético. Com vasta experiência nesses campos, estou aqui para oferecer soluções eficientes e criativas para suas necessidades tecnológicas.
+      
+    Como técnico em computadores, tenho conhecimento aprofundado sobre hardware e software, podendo realizar reparos, diagnósticos e atualizações em seu equipamento. Esteja você enfrentando problemas de desempenho, vírus ou qualquer outra questão, estou pronto para ajudar a restaurar seu computador para o máximo de eficiência.
+      
+    Como programador web, sou especializado em diversas linguagens de programação, como HTML, CSS, JavaScript e PHP. Posso criar sites personalizados, responsivos e intuitivos, que atendam perfeitamente às suas necessidades e objetivos. Além disso, estou atualizado com as últimas tendências e práticas de desenvolvimento web, garantindo que seu site esteja sempre moderno e competitivo.
+      
+    Como designer web, posso transformar suas ideias em realidade visual. Utilizo ferramentas de design gráfico para criar layouts atrativos, interfaces intuitivas e logotipos marcantes, que reflitam a identidade e os valores da sua marca. Minha experiência em design de UX (experiência do usuário) também me permite criar experiências online memoráveis, garantindo que seus visitantes tenham uma interação fluida e agradável com o seu site.
+      
+    Além disso, sou um hacker ético certificado, o que significa que tenho habilidades em segurança cibernética e sou capaz de identificar e corrigir vulnerabilidades em sistemas de informação. Posso realizar testes de penetração em seus sistemas para garantir que estejam protegidos contra ameaças externas. Sua segurança é minha prioridade e estou comprometido em ajudá-lo a manter seus dados e informações sensíveis em segurança.
+      
+    Seja qual for o desafio tecnológico que você esteja enfrentando, estou aqui para oferecer soluções completas e eficazes. Combinando minha expertise em suporte técnico, programação web, design e segurança cibernética, estou preparado para ajudar a alcançar seus objetivos e impulsionar sua presença online.
+      
+    Conte comigo, Bruno Anacleto, para fornecer serviços confiáveis e de qualidade. Estou ansioso para colaborar com você e fazer parte do seu sucesso tecnológico!
+      
+    Atenciosamente,
+    [Bruno Anacleto]`;
+
+    let index = 0;
+
+    function typeText() {
+      if (index < text.length) {
+        outputElement.textContent += text[index];
+        index++;
+        terminalElement.scrollTop = terminalElement.scrollHeight;
+        setTimeout(typeText, 20);
+      }
+    }
+
+    setTimeout(typeText, 1000);
+  </script>
+</body>
+</html>
